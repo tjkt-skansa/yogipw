@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web PKL</title>
+
+    <!-- bootstrap css cdn link  -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+
+    <!-- custom css file -->
+    <style>
+      /* appling google font over the website  */
+body{
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
+}
+/* styling menu icon */
+.nav-menu{
+    border: none;
+    background-color: #fff;
+    font-size: 1.5rem;
+    color: #fca61f;
+}
+/* styling navbar links  */
+.navbar-nav a{
+    color: black;
+    position: relative;
+}
+.navbar-nav a:hover{
+    color: #fca61f;
+}
+.navbar-nav a:after {    
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    top: 35px;
+    position: absolute;
+    background: #fca61f;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+  }
+.navbar-nav a:hover:after { 
+    width: 100%; 
+    left: 0; 
+  }
+  /* styling contact btn  */
+.c-btn{
+    border: none;
+    background: #fca61f;
+    color: #fff;
+    font-size: 1.2rem;
+}
+/* styling home section starts */
+.home{
+    background: linear-gradient(33deg, rgba(242,242,255,1) 0%, rgba(235,249,255,1) 100%);
+    padding: 30px 0px 10px 0px;
+}
+.home h2{
+    font-size: 3rem;
+    line-height: 4rem;
+}
+.c-orange{
+    color: #6f34fe;
+    font-weight: 700;
+    font-size: 4rem;
+}
+.home p{
+    width: fit-content;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+}
+.h-btn:hover{
+    background: #6f34fe;
+    color: #fff;
+    transform: translateY(-20px);
+    transition-duration: 1s;
+}
+.link{
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #fca61f;
+    position: relative;
+}
+.link::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    top: 20px;
+    background-color: #6f34fe;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+.link:hover{
+    color: #6f34fe;
+}
+.link:hover::after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+/* adding animation to home section image  */
+.home img{
+    animation: floatimg 4s ease-in-out infinite;
+}
+
+@keyframes floatimg {
+    0%{
+        transform: translateX(0);
+    }
+    50%{
+        transform: translateX(-24px);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+/* expertise section starts */
+.heading small{
+    color: #6f34fe;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.heading h3{
+    margin-top: 0.5rem;
+    color: #3f396d;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+.expertise h4{
+    color: #3f396d;
+    font-weight: 700;
+}
+.expertise a{
+    text-decoration: none;
+    color: #fca61f;
+}
+.expertise a:hover{
+    color: #6f34fe;
+}
+.expertise .service-card{
+    text-align: center;
+    padding: 15px 15px;
+    border-radius: 0.7rem;
+}
+
+/* skill section starts */
+.skill{
+    background-color: rgb(234, 234, 249);
+}
+.progress-card{
+    padding: 12% 10% 10% 15%;
+    background-color: #fff;
+    text-align: center;
+    border-radius: 10%;
+}
+.progress-card:hover{
+    transform: scale(1.1,1.1);
+    transition-duration: 0.6s;
+}
+.circular-progress{
+    position: relative;
+    height: 130px;
+    width: 130px;
+    border-radius: 50%;
+    background: conic-gradient(#7d2ae8 3.6deg, #ededed 0deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.circular-progress::before{
+    content: "";
+    position: absolute;
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+.progress-value{
+    position: relative;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.html-progress{
+    color: #fca61f;
+}
+.javascript-progress{
+    color: #6f34fe;
+}
+.php-progress{
+    color: #20c997;
+}
+.reactjs-progress{
+    color: #3f396d;
+}
+.text{
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.heading p{
+    font-size: 1.3rem;
+}
+
+/* portfolio section starts */
+#myBtnContainer{
+    margin-bottom: 45px;
+}
+#myBtnContainer button{
+  border: none;
+  color: black;
+  background: transparent;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;   
+  display: inline-block;
+  margin: 0 25px;
+}
+#myBtnContainer button:hover{
+    color: #fca61f;
+}
+
+#myBtnContainer button:focus{
+    outline: none;
+}
+.post .content h4{
+    font-size: 1rem;
+    font-weight: 700;
+}
+.post .card{
+    border: none;
+}
+
+/* testimonial section starts */
+.testimonial img:hover{
+    transform: scale(1.2,1.2);
+    transition-duration: 1s;
+}
+.testimonial h4{
+    color: #3f396d;
+}
+.testimonial i{
+    font-size: 2.9rem;
+    color: #fca61f;
+    
+}
+.testimonial .nextprev-btn{
+    border: none;
+    background-color: #fff;
+}
+.prev:hover,.prev-btn:hover{
+    color:#6f34fe;
+    transform: translateX(-10px);
+    transition-duration: 1s;
+}
+.next:hover,.next-btn:hover{
+    color:#6f34fe;
+    transform: translateX(10px);
+    transition-duration: 1s;
+}
+
+/* blog section starts */
+.blog{
+    background-color: #f2f2ff;
+}
+.blog .blogpost .card{
+    border: none;
+    border-radius: 5%;
+}
+.nav-bg{
+    background-color: #fff;
+}
+
+.blog .blogpost small{
+    color: #6f34fe;
+    font-size: 1.1rem;
+}
+.blog .blogpost h4,.blogpost a{
+    color: #3f396d;
+    font-weight: 700;
+    margin-top: 1rem;
+    text-decoration: none;
+}
+.blogpost a:hover{
+    color: #fca61f;
+}
+.blog .blogpost .read-more-btn{
+    text-decoration: none;
+    color: #fca61f;
+    font-size: 1.1rem;
+}
+.blog .blogpost .read-more-btn:hover{
+    color: #6f34fe;
+}
+/* styling modal group  */
+.btn-c{
+    margin-left: 94%;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    margin-top: -3%;
+}
+.btn-c i{
+    color: #fca61f;
+}
+.modal-body .content span{
+    font-size: 1rem;
+}
+.modal-body .content small{
+    font-size: 1rem;
+    color: #6f34fe;
+}
+/* contact section starts */
+.contact{
+    background-color: #f3f3f3;
+}
+.contact-details i{
+    font-size: 1.5rem;
+    color: #fca61f;
+}
+.contact-details p{
+    font-size: 1.2rem;
+    margin-left: 1rem;
+}
+.contact-form .form-control:focus{
+    box-shadow: none;
+    border: 1px solid #fca61f;
+}
+.contact-form .form-control{
+    padding: 10px 10px;
+    width: 80%;
+}
+
+/* footer section starts */
+footer{
+    background-color: #211e39;
+}
+
+footer .link-group a{
+    margin-left: 10px;
+    margin-right: 10px;
+    text-decoration: none;
+    color: #6c757d;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+footer .link-group a:hover{
+    color: #fca61f;
+}
+.social-links button{
+    border: none;
+    margin-right: 1rem;
+    font-size: 1.2rem;
+    background-color: #fff;
+    padding: 14px 15px 10px 15px;
+}
+.social-links .dribble{
+    color: #f33a7e;
+}
+.social-links button:hover{
+    color: #fff;
+    transform: translateY(-20px);
+    transition-duration: 1s;
+}
+.social-links .dribble:hover{
+    background-color: #f33a7e;
+}
+.social-links .whatsapp{
+    color: #25D366;
+}
+.social-links .whatsapp:hover{
+    background-color: #25D366;
+}
+.social-links .behance{
+    color: #255afc;
+}
+.social-links .behance:hover{
+    background-color: #255afc;
+}
+
+/* styling back to top button */
+#btn-back-to-top {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    display: none;
+    font-size: 1.4rem;
+    background-color: #fca61f;
+    color: #fff;
+    animation: pulse 3s infinite;
+}
+
+    </style>
+
+    <!-- google font link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- bootstrap icon cdn link  -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css"
+    />
+
+    <!-- for adding animation to website we have use AOS library 
+    AOS Library css file cdn link -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- jquery cdn link  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  </head>
+  <body>
+    <!-- navbar starts -->
+    <nav
+      id="navbar-top"
+      class="navbar navbar-expand-lg navbar-light bg-white sticky-top"
+    >
+      <div class="container-fluid px-5">
+        <a class="navbar-brand fw-bold fs-2" href="#" style="color: #3f396d"
+          >Laporan PKL</a
+        >
+        <button
+          class="nav-menu d-md-none"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <i class="bi bi-menu-button-fill"></i>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-center"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav gap-4" style="font-size: 1.1rem">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#bio">Biodata</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#abs">Info Kehadiran</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#gal">Galleri Kegiatan</a>
+            </li>
+          </ul>
+        </div>
+        <button class="c-btn ms-4 py-2 px-4 rounded-pill d-none d-md-block">Contact</button>
+      </div>
+    </nav>
+    <!-- navbar ends here -->
+
+    <!-- Home  -->
+    <section class="home pt-5 pb-5" id="home">
+      <div class="row justify-content-evenly align-middle">
+        <!-- here data-aos is used for adding aos animation  -->
+        <div class="col-10 col-md-6 text-center text-md-start" data-aos="slide-right">
+          <h2 style="color: #3f396d">
+            Tugas Laporan Kegiatan PKL  <br /><span class="c-orange">SMKN 1 KONGBENG</span>
+          </h2>
+          <p class="text-muted">
+            Website ini dibuat untuk menyelesaikan tugas akhir PKL yaitu pembuatan website
+          </p>
+          <button class="c-btn h-btn mt-3 py-3 px-5 rounded-pill">
+            Me
+          </button>
+        </div>
+        <div class="col-10 col-md-4 d-none d-md-block">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/3/37/Kantor_Bupati_Kutai_Timur.JPG" class="img-fluid" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Biodata -->
+    <section class="expertise mt-5" id="bio">
+      <div class="heading text-center">
+        <small>Biodata</small>
+        <h3>
+         Yogi Purwa
+        </h3>
+      </div>
+      <div class="row justify-content-evenly mt-5">
+        <div class="col-10 col-md-4" data-aos="fade-up">
+          <div class="service-card">
+            <div class="text-center">
+              Tempat & Tanggal lahir
+            </div>
+            <div class="content mt-3">
+              <h4>Samarinda, 15 Maret 2025</h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-10 col-md-4" data-aos="fade-up">
+          <div class="service-card">
+            <div class="text-center">
+              DUDIKA
+            </div>
+            <div class="content mt-3">
+              <h4>Kantor Bupati</h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-10 col-md-4" data-aos="fade-up">
+          <div class="service-card">
+            <div class="text-center">
+              Kelas
+            </div>
+            <div class="content mt-3">
+              <h4>XII</h4>
+            </div>
+          </div>
+        </div>
+       
+      </div>
+    </section>
+
+    <!-- Kehadiran -->
+    <section class="attendance mt-5 py-5 skill" id="abs">
+      <div class="container">
+        <h2 class="text-center mb-5 fw-bold" style="color: #3f396d;">Info Kehadiran PKL</h2>
+        <div class="row justify-content-center">
+          
+          <!-- Bulan 1 -->
+          <div class="col-10 col-md-3 mb-4">
+            <div class="card shadow-sm border-0">
+              <div class="card-header bg-primary text-white text-center fw-bold">
+                Bulan 1
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item d-flex justify-content-between">
+                  Hari Kerja <span class="badge bg-success fs-6">21</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                  Sakit <span class="badge bg-warning text-dark fs-6">2</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                  Izin <span class="badge bg-info text-dark fs-6">0</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                  Alpa <span class="badge bg-danger fs-6">0</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Bulan 2 -->
+          <div class="col-10 col-md-3 mb-4">
+            <div class="card shadow-sm border-0">
+              <div class="card-header bg-primary text-white text-center fw-bold">
+                Bulan 2
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item d-flex justify-content-between">
+                  Tanggal Aktif <span class="badge bg-success fs-6">x</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                  Sakit <span class="badge bg-warning text-dark fs-6">x</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                  Izin <span class="badge bg-info text-dark fs-6">x</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                  Alpa <span class="badge bg-danger fs-6">x</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Bulan 3 -->
+          <div class="col-10 col-md-3 mb-4">
+            <div class="card shadow-sm border-0">
+              <div class="card-header bg-primary text-white text-center fw-bold">
+                Bulan 3
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item d-flex justify-content-between">
+                  Tanggal Aktif <span class="badge bg-success fs-6">x</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                  Sakit <span class="badge bg-warning text-dark fs-6">x</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                  Izin <span class="badge bg-info text-dark fs-6">x</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                  Alpa <span class="badge bg-danger fs-6">x</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  
+    <!-- Galeri -->
+    <section class="testimonial mt-5 pt-5" id="gal">
+<section class="gallery" id="gallery">
+  <div class="container text-center">
+    <h2 class="mb-5 fw-bold"style="color: #3f396d;">Galeri Kegiatan PKL</h2>
+
+    <!-- Bulan 1 -->
+    <div class="mb-5">
+      <h4 class="mb-3">Bulan 1 - 
+        <span class="badge bg-primary fs-6">Kegiatan Terbanyak: Administrasi Dokumen</span>
+      </h4>
+      <div id="carouselBulan1" class="carousel slide mx-auto" style="max-width: 900px;" data-bs-ride="carousel">
+        <div class="carousel-inner shadow rounded">
+          <div class="carousel-item active">
+            <img src="./img/1/WhatsApp Image 2025-07-02 at 6.47.20 PM.jpeg" class="d-block w-100 rounded" alt="Foto 1">
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded py-2">
+              <p class="text-white m-0">Mengarsip dokumen</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="./img/1/WhatsApp Image 2025-07-02 at 6.46.46 PM.jpeg" class="d-block w-100 rounded" alt="Foto 2">
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded py-2">
+              <p class="text-white m-0">Mendata Berkas</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="./img/1/WhatsApp Image 2025-07-03 at 2.42.08 PM.jpeg" class="d-block w-100 rounded" alt="Foto 3">
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded py-2">
+              <p class="text-white m-0">Input Data Arsip</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="./img/1/WhatsApp Image 2025-07-02 at 9.57.57 AM.jpeg" class="d-block w-100 rounded" alt="Foto 3">
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded py-2">
+              <p class="text-white m-0">Perbaikan Printer</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselBulan1" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselBulan1" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Bulan 2 -->
+    <!-- <div class="mb-5">
+      <h4 class="mb-3">Bulan 2 - 
+        <span class="badge bg-primary fs-6">Kegiatan Terbanyak: Pengolahan Data</span>
+      </h4>
+      <div id="carouselBulan2" class="carousel slide mx-auto" style="max-width: 900px;" data-bs-ride="carousel">
+        <div class="carousel-inner shadow rounded">
+          <div class="carousel-item active">
+            <img src="https://picsum.photos/900/400?random=21" class="d-block w-100 rounded" alt="Foto 1">
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded py-2">
+              <p class="text-white m-0">Mengolah data penjualan</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://picsum.photos/900/400?random=22" class="d-block w-100 rounded" alt="Foto 2">
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded py-2">
+              <p class="text-white m-0">Membuat grafik laporan</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://picsum.photos/900/400?random=23" class="d-block w-100 rounded" alt="Foto 3">
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded py-2">
+              <p class="text-white m-0">Rekap data bulanan</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://picsum.photos/900/400?random=24" class="d-block w-100 rounded" alt="Foto 4">
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded py-2">
+              <p class="text-white m-0">Verifikasi data stok</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://picsum.photos/900/400?random=25" class="d-block w-100 rounded" alt="Foto 5">
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded py-2">
+              <p class="text-white m-0">Input data ke sistem</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselBulan2" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselBulan2" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </div> -->
+
+    <!-- Bulan 3 -->
+    <!-- <div>
+      <h4 class="mb-3">Bulan 3 - 
+        <span class="badge bg-primary fs-6">Kegiatan Terbanyak: Pelayanan Pelanggan</span>
+      </h4>
+      <div id="carouselBulan3" class="carousel slide mx-auto" style="max-width: 900px;" data-bs-ride="carousel">
+        <div class="carousel-inner shadow rounded">
+          <div class="carousel-item active">
+            <img src="https://picsum.photos/900/400?random=31" class="d-block w-100 rounded" alt="Foto 1">
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded py-2">
+              <p class="text-white m-0">Melayani customer</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://picsum.photos/900/400?random=32" class="d-block w-100 rounded" alt="Foto 2">
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded py-2">
+              <p class="text-white m-0">Pendataan keluhan</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://picsum.photos/900/400?random=33" class="d-block w-100 rounded" alt="Foto 3">
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded py-2">
+              <p class="text-white m-0">Membantu transaksi</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://picsum.photos/900/400?random=34" class="d-block w-100 rounded" alt="Foto 4">
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded py-2">
+              <p class="text-white m-0">Pendataan feedback</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://picsum.photos/900/400?random=35" class="d-block w-100 rounded" alt="Foto 5">
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded py-2">
+              <p class="text-white m-0">Mengatur antrian</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselBulan3" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselBulan3" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </div> -->
+
+  </div>
+</section>
+
+    </section>
+   
+    <!-- blog section starts -->
+    <section class="blog mt-5 pb-5" id="blog">
+      <div class="heading text-center pt-5">
+        <small>Laporan Bulanan</small>
+        <h3>Kegiatan PKL</h3>
+      </div>
+      <div class="row justify-content-evenly px-4 mt-4" data-aos="fade-up">
+        <div class="blogpost col-md-4 col-10 mt-2 mt-md-0 game all">
+          <div class="card">
+            <img
+              src="./img/1/WhatsApp Image 2025-07-02 at 6.47.20 PM.jpeg"
+              class="card-img-top rounded-4"
+              alt="..."
+            />
+            <div class="card-body px-4">
+              <span class="">Juli, 2025</span>
+              <h4 class="card-title">
+                <a href="">Pengarsipan Berkas & Perbaikan Scanner dan Printer</a>
+              </h4>
+              <p class="text-muted">
+                Pada bulan ini saya sering melakukan pengarsipan data dan..
+              </p>
+              <a href="https://drive.google.com/file/d/1I6affR47c3rsgcEk-VgKYsyV9Epnmb1n/view" class="read-more-btn link">Read More</a>
+            </div>
+          </div>
+        </div>
+        <div class="blogpost col-md-4 col-10 mt-2 mt-md-0 game all">
+          <div class="card">
+            <img
+              src="https://d2j6dbq0eux0bg.cloudfront.net/images/7083928/3708813471.jpg"
+              class="card-img-top rounded-4"
+              alt="..."
+            />
+            <div class="card-body px-4">
+              <span class="">Agustus, 2025</span>
+              <h4 class="card-title">
+                <a href="">Belum Dibuat</a>
+              </h4>
+              <p class="text-muted">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum, unde.
+              </p>
+              <a href="#" class="read-more-btn link" data-bs-toggle="modal" data-bs-target="#exampleModal1">Read More</a>
+            </div>
+          </div>
+        </div>
+        <div class="blogpost col-md-4 col-10 mt-2 mt-md-0 game all">
+          <div class="card">
+            <img
+              src="https://d2j6dbq0eux0bg.cloudfront.net/images/7083928/3708813471.jpg"
+              class="card-img-top rounded-4"
+              alt="..."
+            />
+            <div class="card-body px-4">
+              <span class="">September, 2025</span>
+              <h4 class="card-title">
+                <a href="">Belum Dibuat</a>
+              </h4>
+              <p class="text-muted">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore, repudiandae.
+              </p>
+              <a href="#" class="read-more-btn link" data-bs-toggle="modal" data-bs-target="#exampleModal1">Read More</a>
+            </div>
+          </div>
+        </div>
+        <!-- here we will make modals if Read more link is clicked the modal will popup -->
+        
+      </div>
+    </section>
+    <!-- blog section ends here -->
+
+    <!-- contact section starts -->
+    <section class="contact py-5" id="contact">
+      <div class="heading text-center">
+        <small>Get in Touch</small>
+        <h3>Any Questions?</h3>
+      </div>
+    </section>
+    <!-- contact section ends here -->
+
+      <!-- now we will make back to top button when user click on it it will be redirected to top page  -->
+    <button
+      type="button"
+      class="btn btn-floating btn-lg rounded-pill"
+      id="btn-back-to-top"
+    >
+      <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <!-- footer section starts  -->
+    <footer class="text-center text-muted py-4">
+      <h3 class="text-white pt-4" data-aos="fade-up">Web Laporan PKL</h3>
+      <div class="social-links mt-5" data-aos="fade-up">
+        <button href="" class="rounded-pill dribble">
+          <i class="bi bi-dribbble"></i>
+        </button>
+        <button href="https://wa.me/6283849352696" class="rounded-pill whatsapp">
+          <i class="bi bi-whatsapp"></i>
+        </button>
+        <button href="" class="rounded-pill behance">
+          <i class="bi bi-behance"></i>
+        </button>
+      </div>
+      <hr class="text-muted my-4" />
+
+      <p>Copyright 2022 Portfolio | All Rights Reserved.</p>
+    </footer>
+    <!-- footer section ends here -->
+
+      <!-- bootstrap javascript cdn link  -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- AOS library javascript link  -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      // initializing AOS library
+      AOS.init({
+        duration: 1000,
+        offset: 50,
+      });
+    </script>
+    <!-- custom js file linking -->
+    <script src="js/script.js"></script>
+    
+  </body>
+</html>
